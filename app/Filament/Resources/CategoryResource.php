@@ -26,7 +26,8 @@ class CategoryResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->label('Name')
                     ->required()
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ,
             ]);
     }
 

@@ -3,7 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ProductResource\Pages;
-use App\Filament\Resources\ProductResource\RelationManagers;
+//use App\Filament\Resources\ProductResource\RelationManagers;
 use App\Models\Product;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
@@ -17,6 +17,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Storage;
 
 class ProductResource extends Resource
 {
@@ -65,12 +66,12 @@ class ProductResource extends Resource
     {
         return $table
             ->columns([
+                ImageColumn::make('image')->label('Image')->url(fn ($record) => Storage::url($record->image))
+                    ->width(200)->height(200),
                 TextColumn::make('name')->label('Name')->searchable()->sortable(),
                 TextColumn::make('description')->label('Description'),
-                TextColumn::make('price')->label('Price')->money('SYP'),
-                TextColumn::make('category.name')->label('Category'),
-                ImageColumn::make('image')->label('Image'),
-                    //->circular(),
+                TextColumn::make('price')->label('Price')->money('SYP')->sortable(),
+                TextColumn::make('category.name')->label('Category')->searchable(),
             ])
             ->filters([
                 //
