@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Al_Firdawas</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:300:400" rel="stylesheet">
-    <!-- إضافة Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* التصميم العام */
@@ -22,83 +21,66 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px; /* زيادة الحجم */
-            background-color: rgba(255, 255, 255, 0.8); /* شفافية */
+            padding: 20px 40px;
+            background-color: rgba(255, 255, 255, 0.8);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .navbar h1 {
-            font-family: 'Times New Roman', serif; /* تغيير الخط */
-            font-size: 28px; /* زيادة حجم الخط */
+            font-family: 'Times New Roman', serif;
+            font-size: 28px;
             font-weight: bold;
             margin: 0;
         }
 
-        /* زر القائمة (ثلاث شخطات) */
-        .menu-btn {
-            background: none;
-            border: none;
-            font-size: 32px; /* تكبير حجم الزر */
-            cursor: pointer;
+        /* أيقونات الشريط العلوي */
+        .navbar-icons {
+            display: flex;
+            gap: 20px;
+            align-items: center;
         }
 
-        /* القائمة المنزلقة */
-        .menu {
+        .navbar-icons i {
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-icons i:hover {
+            color: #FFD700;
+        }
+
+        /* القائمة المنزلقة للغة */
+        .language-menu {
             display: none;
             position: absolute;
-            top: 70px; /* تعديل الموقع بسبب زيادة حجم الشريط */
-            right: 20px;
-            background-color: #FFEB3B; /* لون أصفر */
+            top: 60px;
+            right: 40px;
+            background-color: #FFEB3B;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
             overflow: hidden;
             z-index: 1000;
         }
 
-        .menu.show {
+        .language-menu.show {
             display: block;
         }
 
-        .menu ul {
+        .language-menu ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
 
-        .menu ul li {
+        .language-menu ul li {
             padding: 10px 20px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            position: relative; /* لإضافة القوائم الفرعية */
         }
 
-        .menu ul li:hover {
-            background-color: #FFD700; /* لون أصفر داكن */
-        }
-
-        /* القوائم الفرعية */
-        .submenu {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 100%; /* وضع القائمة الفرعية بجانب العنصر الرئيسي */
-            background-color: #FFEB3B; /* لون أصفر */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            min-width: 120px;
-        }
-
-        .menu ul li.active .submenu {
-            display: block;
-        }
-
-        .submenu li {
-            padding: 10px 20px;
-            transition: background-color 0.3s ease;
-        }
-
-        .submenu li:hover {
-            background-color: #FFD700; /* لون أصفر داكن */
+        .language-menu ul li:hover {
+            background-color: #FFD700;
         }
 
         /* الأزرار العائمة */
@@ -106,13 +88,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: calc(100vh - 80px); /* تعديل الارتفاع بسبب زيادة حجم الشريط */
-            gap: 20px; /* المسافة بين الأزرار */
+            height: calc(100vh - 80px);
+            gap: 20px;
         }
 
         .floating-buttons button {
-            width: 20%; /* عرض الأزرار (ثلاثة أرباع الحجم السابق) */
-            height: 200px; /* ارتفاع الأزرار */
+            width: 20%;
+            height: 200px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -120,7 +102,7 @@
             font-size: 24px;
             font-weight: bold;
             color: white;
-            background: linear-gradient(45deg, #FFC107, #FF9800); /* تدرج لوني أصفر */
+            background: linear-gradient(45deg, #FFC107, #FF9800);
             border: none;
             border-radius: 15px;
             cursor: pointer;
@@ -128,14 +110,14 @@
         }
 
         .floating-buttons button:hover {
-            transform: translateY(-10px); /* تأثير الطفو */
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* إضافة ظل */
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         /* الأيقونات */
         .floating-buttons button i {
-            font-size: 48px; /* حجم الأيقونة */
-            margin-bottom: 10px; /* المسافة بين الأيقونة والنص */
+            font-size: 48px;
+            margin-bottom: 10px;
         }
 
         /* المحتوى الرئيسي */
@@ -156,105 +138,117 @@
 
         /* تنسيقات اللوغو */
         .logo {
-            height: 60px; /* تكبير حجم اللوغو */
-            margin-left: auto; /* نقل اللوغو إلى اليمين */
-            cursor: pointer; /* تغيير شكل المؤشر عند التمرير */
+            height: 60px;
+            margin-left: auto;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <!-- الشريط العلوي -->
     <div class="navbar">
-        <a href="{{ route('home') }}"> <!-- رابط إلى الصفحة الرئيسية -->
+        <a href="{{ route('home') }}">
             <img src="logo/hd_ed0eba713c8e77833d7901ab53956d88_67dd76321b474 (1).png" alt="Logo" class="logo">
         </a>
-        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <div class="center-text">
+            <h1 id="mainTitle">𝓐𝓛_𝓕𝓘𝓡𝓓𝓐𝓦𝓐𝓢</h1>
+        </div>
+        <div class="navbar-icons">
+            <!-- أيقونة اللغة -->
+            <i class="fas fa-globe" onclick="toggleLanguageMenu()"></i>
+            <!-- أيقونة خدمة العملاء -->
+            <i class="fas fa-headset" onclick="redirectToCustomerService()"></i>
+        </div>
+    </div>
+
+    <!-- القائمة المنزلقة للغة -->
+    <div class="language-menu" id="languageMenu">
+        <ul>
+            <li onclick="changeLanguage('ar')">العربية</li>
+            <li onclick="changeLanguage('en')">English</li>
+        </ul>
     </div>
 
     <!-- الأزرار العائمة -->
     <div class="floating-buttons">
         <button onclick="openTools()">
-            <i class="fas fa-tools"></i> <!-- أيقونة أدوات -->
-            Tools
+            <i class="fas fa-tools"></i>
+            <span id="toolsText">Tools</span>
         </button>
-        <button onclick="openProduction()">
-            <i class="fas fa-utensils"></i> <!-- أيقونة طعام -->
-            Products
+        <button onclick="redirectToCategoryProducts()">
+            <i class="fas fa-utensils"></i>
+            <span id="productsText">Products</span>
         </button>
         <button onclick="openArticles()">
-            <i class="fas fa-book"></i> <!-- أيقونة مقالة -->
-            Articles
+            <i class="fas fa-book"></i>
+            <span id="articlesText">Articles</span>
         </button>
-    </div>
-
-    <!-- القائمة المنزلقة -->
-    <div class="menu" id="menu">
-        <ul>
-            <li onclick="toggleSubmenu('language')">
-                Language
-                <ul class="submenu" id="languageSubmenu">
-                    <li onclick="changeLanguage('ar')">العربية</li>
-                    <li onclick="changeLanguage('en')">English</li>
-                </ul>
-            </li>
-            <li onclick="sendNote()">Send a Note</li>
-            <li onclick="customerService()">Customer Service</li>
-        </ul>
     </div>
 
     <!-- المحتوى الرئيسي -->
     <div class="content">
-        <h1>Welcome to Al_Firdawas</h1>
-        <p>This is an example of a user interface with a dropdown menu.</p>
+        <h1 id="welcomeTitle">𝒲ℰℒ𝒞𝒪ℳℰ 𝒯𝒪 𝒜ℒ_ℱℐℛ𝒟𝒜𝒲𝒜𝒮</h1>
     </div>
 
     <script>
-        // وظيفة لإظهار/إخفاء القائمة
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            menu.classList.toggle('show');
-        }
-
-        // وظيفة لإظهار/إخفاء القوائم الفرعية
-        function toggleSubmenu(submenuId) {
-            const submenu = document.getElementById(submenuId + 'Submenu');
-            const allSubmenus = document.querySelectorAll('.submenu');
-            allSubmenus.forEach((sm) => {
-                if (sm !== submenu) sm.style.display = 'none';
-            });
-            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
-        }
+        // بيانات اللغة
+        const languageData = {
+            ar: {
+                mainTitle: "𝓐𝓛_𝓕𝓘𝓡𝓓𝓐𝓦𝓐𝓢",
+                toolsText: "المستلزمات",
+                productsText: "المنتجات",
+                articlesText: "المقالات",
+                welcomeTitle: " مرحبًا بكم في الفردوس",
+                welcomeMessage: "هذا مثال لواجهة مستخدم مع قائمة منسدلة.",
+            },
+            en: {
+                mainTitle: "𝓐𝓛_𝓕𝓘𝓡𝓓𝓐𝓦𝓐𝓢",
+                toolsText: "Tools",
+                productsText: "Products",
+                articlesText: "Articles",
+                welcomeTitle: "𝒲ℰℒ𝒞𝒪ℳℰ 𝒯𝒪 𝒜ℒ_ℱℐℛ𝒟𝒜𝒲𝒜𝒮",
+                welcomeMessage: "This is an example of a user interface with a dropdown menu.",
+            },
+        };
 
         // وظيفة لتغيير اللغة
         function changeLanguage(lang) {
-            if (lang === 'ar') {
-                alert('تم تغيير اللغة إلى العربية');
-            } else if (lang === 'en') {
-                alert('Language changed to English');
-            }
+            const data = languageData[lang];
+            document.getElementById('mainTitle').textContent = data.mainTitle;
+            document.getElementById('toolsText').textContent = data.toolsText;
+            document.getElementById('productsText').textContent = data.productsText;
+            document.getElementById('articlesText').textContent = data.articlesText;
+            document.getElementById('welcomeTitle').textContent = data.welcomeTitle;
+            document.getElementById('welcomeMessage').textContent = data.welcomeMessage;
+            toggleLanguageMenu(); // إخفاء القائمة بعد التغيير
         }
 
-        // وظيفة لإرسال ملاحظة
-        function sendNote() {
-            alert('Note sent');
+        // وظيفة لإظهار/إخفاء قائمة اللغة
+        function toggleLanguageMenu() {
+            const languageMenu = document.getElementById('languageMenu');
+            languageMenu.classList.toggle('show');
         }
 
         // وظيفة لخدمة العملاء
-        function customerService() {
-            alert('Customer service contacted');
+        function redirectToCustomerService() {
+            // إعادة التوجيه إلى صفحة خدمة العملاء
+            window.location.href = "customer_service.html";
         }
 
         // وظائف الأزرار العائمة
         function openTools() {
-            alert('Tools section opened');
+            // إعادة التوجيه إلى واجهة tools
+            window.location.href = "{{ route('tools') }}";
         }
 
-        function openProduction() {
-            alert('Products section opened');
+        function redirectToCategoryProducts() {
+            // إعادة التوجيه إلى واجهة categorys
+            window.location.href = "{{ route('categorys') }}";
         }
 
         function openArticles() {
-            alert('Articles section opened');
+            // إعادة التوجيه إلى واجهة articles
+            window.location.href = "{{ route('articles') }}";
         }
     </script>
 </body>
