@@ -323,7 +323,7 @@
 
         // وظيفة لخدمة العملاء
         function redirectToCustomerService() {
-            window.location.href = "customer_service.html";
+            window.location.href = "/home/compliants";
         }
 
         // وظيفة البحث

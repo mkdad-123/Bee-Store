@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CompliantsController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ToolsController;
@@ -43,4 +44,7 @@ Route::get(('/home/articles'), [ArticlesController::class, 'showArticles'])->nam
 Route::get(('/home/article/content/{id}'), [ArticlesController::class, 'showArticleContent'])->name('articles.detailes');
 Route::get(('/home/article_search'), [ArticlesController::class, 'searchArticle'])->name('articles.search');
 
-
+Route::get('/home/compliants', function (){
+    return view('compliants');
+})->name('compliants');
+Route::post('/home/add-compliant', [CompliantsController::class, 'addCompliant'])->name('add.compliant');

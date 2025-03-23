@@ -262,7 +262,7 @@
 
         // وظيفة لإعادة التوجيه إلى خدمة العملاء
         function redirectToCustomerService() {
-            window.location.href = "customer_service.html"; // إعادة التوجيه إلى صفحة خدمة العملاء
+            window.location.href = "home/compliants"; // إعادة التوجيه إلى صفحة خدمة العملاء
         }
 
         // وظيفة البحث

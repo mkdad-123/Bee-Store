@@ -295,7 +295,6 @@
             <!-- أيقونة خدمة العملاء -->
             <i class="fas fa-headset" onclick="redirectToCustomerService()"></i>
         </div>
-
         <!-- قائمة اللغة -->
         <div class="language-menu" id="languageMenu">
             <ul>
@@ -370,7 +369,7 @@
 
         // وظيفة لخدمة العملاء
         function redirectToCustomerService() {
-            window.location.href = "customer_service.html";
+            window.location.href = "/home/compliants";
         }
     </script>
 </body>

@@ -195,7 +195,7 @@
             <!-- أيقونة اللغة -->
             <i class="fas fa-globe" onclick="toggleLanguageMenu()"></i>
             <!-- أيقونة خدمة العملاء -->
-            <i class="fas fa-headset" onclick="showCustomerServiceMessage()"></i>
+            <i class="fas fa-headset" onclick="redirectToCustomerService()"></i>
         </div>
     </div>
 
@@ -256,7 +256,9 @@
             document.getElementById('articleText').textContent = data.articleText;
             toggleLanguageMenu(); // إخفاء القائمة بعد التغيير
         }
-
+        function redirectToCustomerService() {
+            window.location.href = "/home/compliants";
+        }
         // وظيفة لعرض رسالة خدمة العملاء
         function showCustomerServiceMessage() {
             alert("مرحبًا! كيف يمكننا مساعدتك اليوم؟"); // رسالة خدمة العملاء

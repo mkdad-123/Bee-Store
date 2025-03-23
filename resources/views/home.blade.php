@@ -232,7 +232,7 @@
         // وظيفة لخدمة العملاء
         function redirectToCustomerService() {
             // إعادة التوجيه إلى صفحة خدمة العملاء
-            window.location.href = "customer_service.html";
+            window.location.href = "/home/compliants";
         }
 
         // وظائف الأزرار العائمة
