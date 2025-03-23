@@ -5,45 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Al_Firdawas</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:300:400" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             margin: 0;
         }
 
         h1 {
-            h1 {
-  font-family: 'Times New Roman', serif;
+            font-family: 'Times New Roman', serif;
             font-size: 72px;
             color: #333;
             text-transform: uppercase;
-}
         }
 
         .company-text {
             font-family: 'Lato', sans-serif;
-            font-size: 24px; /* حجم أصغر */
-            color: black; /* لون أسود */
-            margin-bottom: 20px; /* مسافة بين النص والزر */
+            font-size: 24px;
+            color: black;
+            margin-bottom: 20px;
         }
 
         .home-button {
-            background-color: #FFD700; /* لون أصفر */
-            color: black; /* لون النص أسود */
-            padding: 20px 50px; /* زيادة حجم الزر */
-            font-size: 24px; /* زيادة حجم نص الزر */
-            border: none; /* إزالة الحدود */
-            border-radius: 5px; /* زوايا مستديرة */
-            cursor: pointer; /* تغيير شكل المؤشر */
-            text-transform: uppercase; /* أحرف كبيرة */
-            font-weight: bold; /* نص سميك */
-            transition: background-color 0.3s ease; /* تأثير عند التمرير */
-            width: auto; /* جعل الزر يتناسب مع النص */
-            margin-top: 30px; /* تنزيل الزر لأسفل */
-            white-space: nowrap; /* منع النص من الانتقال إلى سطر جديد */
+            background-color: #FFD700;
+            color: black;
+            padding: 20px 50px;
+            font-size: 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            width: auto;
+            margin-top: 30px;
+            white-space: nowrap;
         }
 
         .home-button:hover {
-            background-color: #FFC107; /* لون أصفر داكن عند التمرير */
+            background-color: #FFC107;
         }
 
         p {
@@ -194,9 +193,62 @@
 
         /* إضافة تنسيقات للوغو */
         .logo {
-            height: 100px; /* حجم اللوغو */
-            margin-right: 40px; /* مسافة بين اللوغو والنص */
-            vertical-align: middle; /* محاذاة اللوغو مع النص */
+            height: 100px;
+            margin-right: 40px;
+            vertical-align: middle;
+        }
+
+        /* أيقونات اللغة وخدمة العملاء */
+        .navbar-icons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .navbar-icons i {
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-icons i:hover {
+            color: #FFD700;
+        }
+
+        /* قائمة اللغة */
+        .language-menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background-color: #FFEB3B;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .language-menu.show {
+            display: block;
+        }
+
+        .language-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .language-menu ul li {
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .language-menu ul li:hover {
+            background-color: #FFD700;
         }
 
         @media (max-width: 768px) {
@@ -210,27 +262,48 @@
             }
 
             h1 {
-                font-size: 48px; /* حجم أصغر للشاشات الصغيرة */
+                font-size: 48px;
             }
 
             .company-text {
-                font-size: 18px; /* حجم أصغر للشاشات الصغيرة */
+                font-size: 18px;
             }
 
             .home-button {
-                padding: 15px 30px; /* حجم أصغر للزر */
-                font-size: 20px; /* حجم نص أصغر */
-                width: auto; /* عرض أصغر للزر */
+                padding: 15px 30px;
+                font-size: 20px;
+                width: auto;
             }
 
             .logo {
-                height: 60px; /* حجم أصغر للوغو على الشاشات الصغيرة */
+                height: 60px;
+            }
+
+            .navbar-icons {
+                top: 10px;
+                right: 10px;
             }
         }
     </style>
 </head>
 <body>
     <div class="header">
+        <!-- أيقونات اللغة وخدمة العملاء -->
+        <div class="navbar-icons">
+            <!-- أيقونة اللغة -->
+            <i class="fas fa-globe" onclick="toggleLanguageMenu()"></i>
+            <!-- أيقونة خدمة العملاء -->
+            <i class="fas fa-headset" onclick="redirectToCustomerService()"></i>
+        </div>
+
+        <!-- قائمة اللغة -->
+        <div class="language-menu" id="languageMenu">
+            <ul>
+                <li onclick="changeLanguage('ar')">العربية</li>
+                <li onclick="changeLanguage('en')">English</li>
+            </ul>
+        </div>
+
         <!-- جرات العسل كعلامة مائية -->
         <div class="honey-jar honey-jar-1"></div>
         <div class="honey-jar honey-jar-2"></div>
@@ -242,10 +315,10 @@
         <div class="inner-header">
             <!-- إضافة اللوغو -->
             <img src="logo\hd_ed0eba713c8e77833d7901ab53956d88_67dd76321b474 (1).png" alt="Logo" class="logo">
-            <h1>Al_Firdawas</h1>
-            <div class="company-text">Company</div>
-            <a href="{{ route('home') }}"> <!-- رابط إلى الصفحة الرئيسية -->
-                <button class="home-button">Go to Home Page</button>
+            <h1 id="mainTitle">𝔸𝕃_𝔽𝕀ℝ𝔻𝔸𝕎𝔸𝕊</h1>
+            <div class="company-text" id="companyText">Company</div>
+            <a href="{{ route('home') }}">
+                <button class="home-button" id="homeButton">Go to Home Page</button>
             </a>
         </div>
 
@@ -264,5 +337,41 @@
             </svg>
         </div>
     </div>
+
+    <script>
+        // بيانات اللغة
+        const languageData = {
+            ar: {
+                mainTitle: "الفردوس",
+                companyText: "شركة",
+                homeButton: "انتقل إلى الصفحة الرئيسية",
+            },
+            en: {
+                mainTitle: "𝔸𝕃_𝔽𝕀ℝ𝔻𝔸𝕎𝔸𝕊",
+                companyText: "Company",
+                homeButton: "Go to Home Page",
+            },
+        };
+
+        // وظيفة لتغيير اللغة
+        function changeLanguage(lang) {
+            const data = languageData[lang];
+            document.getElementById('mainTitle').textContent = data.mainTitle;
+            document.getElementById('companyText').textContent = data.companyText;
+            document.getElementById('homeButton').textContent = data.homeButton;
+            toggleLanguageMenu(); // إخفاء القائمة بعد التغيير
+        }
+
+        // وظيفة لإظهار/إخفاء قائمة اللغة
+        function toggleLanguageMenu() {
+            const languageMenu = document.getElementById('languageMenu');
+            languageMenu.classList.toggle('show');
+        }
+
+        // وظيفة لخدمة العملاء
+        function redirectToCustomerService() {
+            window.location.href = "customer_service.html";
+        }
+    </script>
 </body>
 </html>
