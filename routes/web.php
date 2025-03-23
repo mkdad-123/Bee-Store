@@ -44,4 +44,3 @@ Route::get(('/home/article/content/{id}'), [ArticlesController::class, 'showArti
 Route::get(('/home/article_search'), [ArticlesController::class, 'searchArticle'])->name('articles.search');
 
 
-Route::get('/change-language/{lang}', [LanguageController::class, 'changeLanguage'])->name('change.language');
