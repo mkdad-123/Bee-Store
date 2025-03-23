@@ -1,0 +1,20 @@
+/* تخصيص الشعار في الشريط الجانبي */
+.filament-sidebar-header {
+    background-color: #ffffff; /* اختياري: لتغيير خلفية الشعار */
+    padding: 10px;
+}
+
+.filament-sidebar-header .flex.items-center.gap-2 {
+    display: none; /* لإخفاء النص الافتراضي */
+}
+
+.filament-sidebar-header::before {
+    content: '';
+    display: block;
+    width: 150px; /* عرض الشعار */
+    height: 40px; /* ارتفاع الشعار */
+    background-image: url('../logo/img.png'); /* مسار الشعار */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
