@@ -183,6 +183,7 @@
             </button>
         </div>
     </div>
+    <script src="script.js" defer></script>
 
     <script>
         // بيانات اللغة

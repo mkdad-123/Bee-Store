@@ -246,6 +246,7 @@
             <!-- سيتم ملء هذا القسم عبر JavaScript -->
         </div>
     </div>
+    <script src="script.js" defer></script>
 
     <script>
         // بيانات المنتجات
