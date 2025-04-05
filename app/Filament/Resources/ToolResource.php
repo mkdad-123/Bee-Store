@@ -6,12 +6,15 @@ use App\Filament\Resources\ToolResource\Pages;
 use App\Models\Tool;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\TextColumn\TextColumnSize;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -37,10 +40,10 @@ class ToolResource extends Resource
                     ->required()
                     ->numeric(),
 
-                TextInput::make('description')
+                Textarea::make('description')
                     ->label('Description')
                     ->required()
-                    ->nullable(),
+                    ->columnSpanFull(),
 
 
                 FileUpload::make('image')
@@ -56,15 +59,31 @@ class ToolResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('image')->label('Image')->url(fn ($record) => Storage::url($record->image))
-                    ->width(200)->height(200),
-                TextColumn::make('name')->label('Name')->searchable()->sortable(),
-                TextColumn::make('description')
-                    ->label('Description')
-                    ->limit(50)
-                    ->tooltip(fn ($record) => $record->description),
-                TextColumn::make('price')->label('Price')->money('SYP')->sortable(),
+                Tables\Columns\Layout\Grid::make()
+                    ->columns(1)
+                    ->schema([
+
+                        ImageColumn::make('image')->label('Image')->url(fn ($record) => Storage::url($record->image))
+                            ->width(300)
+                            ->height(350),
+
+                        TextColumn::make('name')->label('Name')
+                            ->weight(FontWeight::SemiBold)
+                            ->size(TextColumnSize::Large)
+                            ->searchable()
+                            ->sortable(),
+
+                        TextColumn::make('description')
+                            ->label('Description')
+                            ->limit(150)
+                            ->html()
+                            ->tooltip(fn ($record) => $record->description),
+
+                        TextColumn::make('price')->label('Price')->money('SYP')->sortable(),
+
+                    ])
             ])
+            ->contentGrid(['md' => 2 , 'xl' => 3])
             ->filters([
                 //
             ])
