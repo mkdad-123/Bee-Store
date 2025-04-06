@@ -9,6 +9,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Builder;
@@ -20,17 +21,31 @@ class ArticleResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-pencil-square';
 
+    public static function getNavigationLabel(): string
+    {
+        return __('filament.articles');
+    }
+    public static function getPluralLabel(): string
+    {
+        return __('filament.articles');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('filament.article');
+    }
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 TextInput::make('title')
-                    ->label('Title')
+                    ->label(__('filament.title'))
                     ->required()
                     ->columnSpan(2),
 
                 RichEditor::make('text')
-                    ->label('Content')
+                    ->label(__('filament.content'))
                     ->required()
                     ->columnSpan(5)
                     ->extraInputAttributes(['style' => 'min-height: 300px;']),
@@ -42,11 +57,11 @@ class ArticleResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('created_at')
-                    ->label('Created At')
+                    ->label(__('filament.create at'))
                     ->date(),
 
                 Tables\Columns\TextColumn::make('title')
-                ->label('Title')
+                ->label(__('filament.title'))
                     ->searchable()
                     ->sortable(),
             ])

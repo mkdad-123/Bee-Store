@@ -20,12 +20,26 @@ class CategoryResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-tag';
 
+    public static function getNavigationLabel(): string
+    {
+        return __('filament.categories');
+    }
+    public static function getPluralLabel(): string
+    {
+        return __('filament.categories');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('filament.category');
+    }
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
-                    ->label('Name')
+                    ->label(__('filament.name'))
                     ->required()
                     ->maxLength(255)
                     ,
@@ -38,12 +52,12 @@ class CategoryResource extends Resource
             ->columns([
 
                 Tables\Columns\TextColumn::make('name')
-                ->label('Name')
+                ->label(__('filament.name'))
                 ->searchable()
                 ->sortable(),
 
                 Tables\Columns\TextColumn::make('products_count')
-                    ->label('Number of Products')
+                    ->label(__('filament.number of products'))
                     ->counts('products'),
             ])
             ->filters([

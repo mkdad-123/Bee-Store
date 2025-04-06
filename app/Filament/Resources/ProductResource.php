@@ -28,36 +28,50 @@ class ProductResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-shopping-cart';
 
+    public static function getNavigationLabel(): string
+    {
+        return __('filament.products');
+    }
+    public static function getPluralLabel(): string
+    {
+        return __('filament.products');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('filament.product');
+    }
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
 
                 TextInput::make('name')
-                    ->label('Name')
+                    ->label(__('filament.name'))
                     ->required()
                     ->maxLength(255),
 
                 TextInput::make('price')
-                    ->label('Price')
+                    ->label(__('filament.price'))
                     ->required()
                     ->numeric(),
 
                 Textarea::make('description')
-                    ->label('Description')
+                    ->label(__('filament.description'))
                     ->required()
                     ->columnSpanFull(),
 
 
                 FileUpload::make('image')
-                    ->label('Image')
+                    ->label(__('filament.image'))
                     ->image()
                     ->directory('product-images')
                     ->maxSize(2048)
                     ->nullable(),
 
                 Select::make('category_id')
-                    ->label('Category')
+                    ->label(__('filament.category'))
                     ->relationship('category', 'name')
                     ->required(),
 
@@ -73,24 +87,24 @@ class ProductResource extends Resource
                 ->columns(1)
                 ->schema([
 
-                    ImageColumn::make('image')->label('Image')->url(fn ($record) => Storage::url($record->image))
+                    ImageColumn::make('image')->label(__('filament.image'))->url(fn ($record) => Storage::url($record->image))
                         ->width(300)
                         ->height(350),
 
-                    TextColumn::make('name')->label('Name')
+                    TextColumn::make('name')->label(__('filament.name'))
                         ->weight(FontWeight::SemiBold)
                         ->size(TextColumnSize::Large)
                         ->searchable()
                         ->sortable(),
 
                     TextColumn::make('description')
-                        ->label('Description')
+                        ->label(__('filament.description'))
                         ->limit(150)
                         ->html()
                         ->tooltip(fn ($record) => $record->description),
-                    TextColumn::make('category.name')->label('Category')->searchable(),
+                    TextColumn::make('category.name')->label(__('filament.category'))->searchable(),
 
-                    TextColumn::make('price')->label('Price')->money('SYP')->sortable(),
+                    TextColumn::make('price')->label(__('filament.price'))->money('SYP')->sortable(),
 
 
                ])
