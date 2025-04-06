@@ -18,5 +18,8 @@ return [
     'description' => 'الوصف',
     'image' => 'الصورة',
     'number of products and tools' => 'عدد المنتجات و الأدوات',
-    'total' => 'المجموع'
+    'total' => 'المجموع',
+    'switch_language' => 'تبديل اللغة',
+    'english' => 'الانجليزية',
+    'arabic' => 'العربية',
 ];

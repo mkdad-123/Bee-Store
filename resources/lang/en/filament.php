@@ -18,6 +18,9 @@ return [
     'description' => 'Description',
     'image' => 'Image',
     'number of products and tools' => 'Number of products and tools',
-    'total' => 'Total'
+    'total' => 'Total',
+    'switch_language' => 'switch_language',
+    'english' => 'english',
+    'arabic' => 'arabic',
 
 ];

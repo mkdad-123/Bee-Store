@@ -3,6 +3,7 @@
 namespace App\Providers\Filament;
 
 use App\Livewire\DashboardChart;
+use App\Livewire\LanguageSwitcher;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -42,7 +43,8 @@ class AdminPanelProvider extends PanelProvider
             ->widgets([
                 Widgets\AccountWidget::class,
                 //Widgets\FilamentInfoWidget::class,
-                DashboardChart::class
+                DashboardChart::class,
+                LanguageSwitcher::class
             ])
             ->middleware([
                 EncryptCookies::class,
