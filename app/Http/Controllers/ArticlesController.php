@@ -9,7 +9,7 @@ class ArticlesController extends Controller
 {
 
     public function showArticles (){
-        
+
         $articles = Article::all();
 
         return view('articles' , compact('articles'));
@@ -30,9 +30,9 @@ class ArticlesController extends Controller
     public function searchArticle(Request $request)
     {
         $keyword = $request->query('keyword');
-    
+
         $articles = Article::where('title', 'like', '%' . $keyword . '%')->get();
-    
+
         return view('articles.search', compact('articles', 'keyword'));
     }
 }

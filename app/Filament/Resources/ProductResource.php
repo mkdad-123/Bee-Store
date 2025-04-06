@@ -45,10 +45,10 @@ class ProductResource extends Resource
                     ->required()
                     ->nullable(),
 
-
-                FileUpload::make('image')
+                    FileUpload::make('image')
                     ->label('Image')
                     ->image()
+                    ->disk('public')
                     ->directory('product-images')
                     ->maxSize(2048)
                     ->nullable(),
