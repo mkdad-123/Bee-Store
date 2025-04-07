@@ -48,7 +48,13 @@ class ArticleResource extends Resource
                     ->label(__('filament.content'))
                     ->required()
                     ->columnSpan(5)
-                    ->extraInputAttributes(['style' => 'min-height: 300px;']),
+                    ->extraInputAttributes(['style' => 'min-height: 300px;'])
+                    ->fileAttachmentsDisk('public')
+                    ->fileAttachmentsDirectory('article-uploads')
+                    ->fileAttachmentsVisibility('public')
+
+
+
             ])->columns(7);
     }
 
