@@ -10,10 +10,10 @@ class ToolsController extends Controller
     public function showTools()
     {
         $tools = Tool::all();
-    
+
         return view('tools', compact('tools'));
     }
-    
+
     public function showToolDetails($id)
     {
         $tool = Tool::find($id);
@@ -24,13 +24,13 @@ class ToolsController extends Controller
 
         return view('tools.details', compact('tool'));
     }
-        
+
     public function searchTool(Request $request)
     {
         $keyword = $request->query('keyword');
-    
+
         $tools = Tool::where('name', 'like', '%' . $keyword . '%')->get();
-    
+
         return view('tools.search', compact('tools', 'keyword'));
     }
     }

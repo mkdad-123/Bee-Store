@@ -17,9 +17,12 @@ return [
     'price' => 'السعر',
     'description' => 'الوصف',
     'image' => 'الصورة',
-    'number of products and tools' => 'عدد المنتجات و الأدوات',
+    'number of products and tools' => 'عدد البيانات ',
     'total' => 'المجموع',
     'switch_language' => 'تبديل اللغة',
+    'current_language' => 'اللغة الحالية: :locale',
     'english' => 'الانجليزية',
     'arabic' => 'العربية',
+    'complaints' => 'الشكاوى' ,
+    'complaint' => 'شكوى' ,
 ];

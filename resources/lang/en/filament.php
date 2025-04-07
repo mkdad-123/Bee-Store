@@ -17,10 +17,13 @@ return [
     'price' => 'Price',
     'description' => 'Description',
     'image' => 'Image',
-    'number of products and tools' => 'Number of products and tools',
+    'number of products and tools' => 'Number of data',
     'total' => 'Total',
-    'switch_language' => 'switch_language',
+    'switch_language' => 'switch language',
+    'current_language' => 'Current Language: :locale',
     'english' => 'english',
     'arabic' => 'arabic',
+    'complaints'=> 'Complaints',
+    'complaint'=> 'Complaint'
 
 ];

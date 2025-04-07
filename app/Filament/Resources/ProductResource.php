@@ -62,10 +62,11 @@ class ProductResource extends Resource
                     ->required()
                     ->columnSpanFull(),
 
-
                 FileUpload::make('image')
                     ->label(__('filament.image'))
+
                     ->image()
+                    ->disk('public')
                     ->directory('product-images')
                     ->maxSize(2048)
                     ->nullable(),

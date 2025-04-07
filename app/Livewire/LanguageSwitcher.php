@@ -11,15 +11,20 @@ class LanguageSwitcher extends Widget
     protected static ?int $sort = -1;
     protected static string $view = 'livewire.language-switcher';
 
+    public string $currentLocale = 'en';
 
-    public function switchLanguage($locale)
+    public function mount()
     {
-        // التحقق من أن اللغة المطلوبة مدعومة
-        if (in_array($locale, ['en', 'ar'])) {
-            Session::put('locale', $locale); // تحديث اللغة في الجلسة
-            App::setLocale($locale); // تحديث اللغة فورًا
-        }
+        $this->currentLocale = App::getLocale();
+    }
+
+    public function toggleLanguage()
+    {
+        $this->currentLocale = $this->currentLocale === 'en' ? 'ar' : 'en';
+        session(['locale' => $this->currentLocale]);
+        App::setLocale($this->currentLocale);
 
         return redirect(request()->header('Referer'));
     }
+
 }
