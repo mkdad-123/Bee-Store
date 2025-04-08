@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Search Results - {{ $keyword }}">
-    <title>Search Results - {{ $keyword }}</title>
+    <title>𝗖𝗔𝗧𝗘𝗚𝗢𝗥𝗬 - {{ $keyword }}</title>
 <link rel="icon" href="logo/hd_ed0eba713c8e77833d7901ab53956d88_67dd76321b474 (1).png" type="image/png">
     <!-- Font loading optimizations -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>

@@ -311,7 +311,7 @@
                  height="60">
         </a>
         <div class="center-text">
-            <h1 id="pageTitle">𝓐𝓛_𝓕𝓦𝓡𝓓𝓐𝓦𝓐𝓢</h1>
+            <h1 id="pageTitle">𝓟𝓐𝓡𝓐𝓓𝓘𝓢𝓔</h1>
         </div>
         <div class="navbar-icons">
             <i class="fas fa-globe" id="languageIcon" aria-label="Change language"></i>

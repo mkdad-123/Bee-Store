@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝗔𝗟_𝗙𝗜𝗥𝗗𝗔𝗪𝗔𝗦</title>
+    <title>𝗣𝗔𝗥𝗔𝗗𝗜𝗦𝗘</title>
 <link rel="icon" href="logo/hd_ed0eba713c8e77833d7901ab53956d88_67dd76321b474 (1).png" type="image/png">
     <!-- Preload critical resources -->
     <link rel="preload" href="https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh7USSwiPGQ3q5d0.woff2" as="font" type="font/woff2" crossorigin>
@@ -227,7 +227,7 @@
                  height="50">
         </a>
         <div class="center-text">
-            <h1 id="mainTitle">𝓐𝓛_𝓕𝓘𝓡𝓓𝓐𝓦𝓐𝓢</h1>
+            <h1 id="mainTitle">𝓟𝓐𝓡𝓐𝓓𝓘𝓢𝓔</h1>
         </div>
         <div class="navbar-icons">
             <i class="fas fa-globe" id="languageIcon" aria-label="Change language"></i>
@@ -261,7 +261,7 @@
 
     <!-- المحتوى الرئيسي -->
     <div class="content">
-        <h1 id="welcomeTitle">𝒲ℰℒ𝒞𝒪ℳℰ 𝒯𝒪 𝒜ℒ_ℱℐℛ𝒟𝒜𝒲𝒜𝒮</h1>
+        <h1 id="welcomeTitle">𝓦𝓔𝓛𝓒𝓞𝓜𝓔 𝓣𝓞 𝓟𝓐𝓡𝓐𝓓𝓘𝓢𝓔</h1>
         <p id="welcomeMessage">Where nature's harmony meets the sweetness of honey in a green paradise.</p>
     </div>
 
@@ -270,7 +270,7 @@
         // بيانات اللغة
         const languageData = {
             ar: {
-                mainTitle: "𝓐𝓛_𝓕𝓘𝓡𝓓𝓐𝓦𝓐𝓢",
+                mainTitle: "𝓟𝓐𝓡𝓐𝓓𝓘𝓢𝓔",
                 toolsText: "المستلزمات",
                 productsText: "المنتجات",
                 articlesText: "المقالات",
@@ -278,11 +278,11 @@
                 welcomeMessage: "حيث تلتقي أنسجام الطبيعة مع حلاوة العسل في فردوس أخضر.",
             },
             en: {
-                mainTitle: "𝓐𝓛_𝓕𝓘𝓡𝓓𝓐𝓦𝓐𝓢",
+                mainTitle: "𝓟𝓐𝓡𝓐𝓓𝓘𝓢𝓔",
                 toolsText: "Tools",
                 productsText: "Products",
                 articlesText: "Articles",
-                welcomeTitle: "𝒲ℰℒ𝒞𝒪ℳℰ 𝒯𝒪 𝒜ℒ_ℱℐℛ𝒟𝒜𝒲𝒜𝒮",
+                welcomeTitle: "𝓦𝓔𝓛𝓒𝓞𝓜𝓔 𝓣𝓞 𝓟𝓐𝓡𝓐𝓓𝓘𝓢𝓔",
                 welcomeMessage: "Where nature's harmony meets the sweetness of honey in a green paradise.",
             },
         };
