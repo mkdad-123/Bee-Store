@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - {{ $category->name }}</title>
+    <title> 𝗣𝗥𝗢𝗗𝗨𝗖𝗧𝗦 - {{ $category->name }}</title>
     <link rel="icon" href="/logo/hd_ed0eba713c8e77833d7901ab53956d88_67dd76321b474 (1).png" type="image/png">
     <!-- تحسين تحميل الخطوط -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400&display=swap" rel="stylesheet" preload>
