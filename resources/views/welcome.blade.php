@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝗔𝗟_𝗙𝗜𝗥𝗗𝗔𝗪𝗔𝗦</title>
+    <title>𝗣𝗔𝗥𝗔𝗗𝗜𝗦𝗘</title>
     <!-- Preload أهم الموارد -->
     <link rel="preload" href="https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh7USSwiPGQ3q5d0.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style">
@@ -94,7 +94,7 @@
 
         <div class="inner-header">
             <img src="logo/hd_ed0eba713c8e77833d7901ab53956d88_67dd76321b474 (1).png" alt="Al_Firdawas Logo" class="logo" loading="lazy">
-            <h1 id="mainTitle">𝔸𝕃_𝔽𝕀ℝ𝔻𝔸𝕎𝔸𝕊</h1>
+            <h1 id="mainTitle">ℙ𝔸ℝ𝔸𝔻𝕀𝕊𝔼</h1>
             <div class="company-text" id="companyText">Company</div>
             <a href="{{ route('home') }}">
                 <button class="home-button" id="homeButton">Go to Home Page</button>
@@ -118,7 +118,7 @@
 
     <!-- المحتوى الرئيسي -->
     <div class="content">
-        <h1 class="welcome-text" id="welcomeTitle">𝒲ℰℒ𝒞𝒪ℳℰ 𝒯𝒪 𝒜ℒ_ℱℐℛ𝒟𝒜𝒲𝒜𝒮</h1>
+        <h1 class="welcome-text" id="welcomeTitle">𝓦𝓔𝓛𝓒𝓞𝓜𝓔 𝓣𝓞 𝓟𝓐𝓡𝓐𝓓𝓘𝓢𝓔</h1>
         <p class="welcome-message" id="welcomeMessage">Where nature's harmony meets the sweetness of honey in a green paradise.</p>
     </div>
 
@@ -133,10 +133,10 @@
                 welcomeMessage: "حيث تلتقي أنسجام الطبيعة مع حلاوة العسل في فردوس أخضر."
             },
             en:{
-                mainTitle:"𝔸𝕃_𝔽𝕀ℝ𝔻𝔸𝕎𝔸𝕊",
+                mainTitle:"ℙ𝔸ℝ𝔸𝔻𝕀𝕊𝔼",
                 companyText:"Company",
                 homeButton:"Go to Home Page",
-                welcomeTitle: "𝒲ℰℒ𝒞𝒪ℳℰ 𝒯𝒪 𝒜ℒ_ℱℐℛ𝒟𝒜𝒲𝒜𝒮",
+                welcomeTitle: "𝓦𝓔𝓛𝓒𝓞𝓜𝓔 𝓣𝓞 𝓟𝓐𝓡𝓐𝓓𝓘𝓢𝓔",
                 welcomeMessage: "Where nature's harmony meets the sweetness of honey in a green paradise."
             }
         };

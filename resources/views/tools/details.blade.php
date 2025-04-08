@@ -287,7 +287,7 @@
                  fetchpriority="high">
         </a>
         <div class="center-text">
-            <h1>𝓐𝓛_𝓕𝓘𝓡𝓓𝓐𝓦𝓐𝓢</h1>
+            <h1>𝓟𝓐𝓡𝓐𝓓𝓘𝓢𝓔</h1>
         </div>
         <div class="navbar-icons">
             <i class="fas fa-globe" onclick="toggleLanguageMenu()" aria-label="Change language"></i>
